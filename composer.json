@@ -1,0 +1,31 @@
+{
+    "name": "crunchy/crunchy-profile",
+    "description": "Extensible user profile system for ZfcUser",
+    "version": "0.0.1",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "zf2", "zfcuser", "user", "profile", "user profile"
+    ],
+    "homepage": "https://github.com/mwalkowiak/CrunchyProfile",
+    "authors": [
+        {
+            "name": "Michal Walkowiak",
+            "email": "owner@crunchyconsulting.com",
+            "homepage": "http://www.crunchyconsulting.com/"
+        }
+    ],
+    "require": {
+        "zendframework/zendframework": "2.*",
+        "zf-commons/zfc-user": "0.*",
+        "imagine/Imagine": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "CrunchyProfile": "src/"
+        },
+        "classmap": [
+            "./"
+        ]
+    }
+}

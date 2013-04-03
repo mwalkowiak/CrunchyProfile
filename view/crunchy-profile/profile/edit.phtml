@@ -1,0 +1,54 @@
+<div class="container rc-box">
+    <article class="offerpage">
+        <h3 style="margin-bottom: 25px;">Profile Data</h3>
+
+        <?php
+        $form = $this->form;
+		$options = $this->options;
+	?>
+
+	<?php if (!$form || !$options): ?>
+		<div>Please define at least one field in profile field configuration!</div>
+	<?php else: ?>
+		<?php $form->prepare();?>
+
+		<?=$this->form()->openTag($form)?>
+
+
+		<?php foreach($options as $name => $property): ?>
+                    <?php if ($property['enable']): ?>
+                            <!--DYNAMIC FIELD-->
+                        <?php $field = $form->get("$name"); ?>
+
+                        <? if (isset($this->images[$name]) && $this->images[$name] != ''): ?>
+	                        <div class="control-group">
+					            <label class="control-label">Current <?php echo $field->getLabel(); ?></label>
+					            <div class="controls">
+					              <img src='<?php echo $this->images[$name]; ?>' alt="<?php echo $field->getLabel(); ?>" />
+					            </div>
+					        </div>
+                        <?php endif; ?>
+
+                        <div class="control-group <?= count($field->getMessages()) ? 'error' : '' ?>">
+                            <label class="control-label"><?=$field->getLabel()?></label>
+                            <div class="controls">
+                                    <?= $this->formElement($field) ?>
+                                <span class="help-block"><?= implode('<br/>', $field->getMessages()) ?></span>
+                            </div>
+                        </div>
+                     <?php endif; ?>
+		<?php endforeach; ?>
+
+		<!--SUBMIT-->
+		<?php $submit = $form->get('submit') ?>
+		<div class="control-group">
+		    <div class="controls">
+		        <?= $this->formSubmit($submit) ?>
+		    </div>
+		</div>
+
+		<?= $this->form()->closeTag()?>
+	<?php endif; ?>
+
+    </article>
+</div>

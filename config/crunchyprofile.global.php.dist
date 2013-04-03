@@ -1,0 +1,72 @@
+<?php
+return array(
+    'crunchy-profile' => array(
+        'image_path' => 'images/profiles',
+        'absolute_image_path' => __DIR__ . '/../../public/images/profiles',
+        'field_settings' => array(
+                'company_name' => array(
+                    'type' => 'text',
+                    'label' => 'Company name',
+                    'enable'  => true,
+                    'editable'  => true,
+                    'required' => true,
+                    'validators' => array(
+                        array(
+                            'name' => 'StringLength',
+                            'options' => array(
+                                'min' => 1,
+                                'max' => 128,
+                            ),
+                        ),
+                    ),
+                ),
+                'company_website' => array(
+                    'type' => 'text',
+                    'label' => 'Company website',
+                    'enable'  => true,
+                    'editable'  => true,
+                    'required' => false,
+                    'validators' => array(
+                        array(
+                            'name' => 'StringLength',
+                            'options' => array(
+                                'min' => 1,
+                                'max' => 128,
+                            ),
+                        ),
+                    ),
+                ),
+                'company_logo' => array(
+                    'type' => 'image',
+                    'label' => 'Company logo',
+                    'enable'  => true,
+                    'editable'  => true,
+                    'required' => false,
+                ),
+                'company_location' => array(
+                     'type' => 'text',
+                     'label' => 'Company location',
+                     'enable'  => true,
+                     'editable'  => true,
+                     'required' => false,
+                     'validators' => array(
+                         array(
+                             'name' => 'StringLength',
+                             'options' => array(
+                                 'min' => 1,
+                                 'max' => 64,
+                             ),
+                         ),
+                     ),
+                 ),
+                 'company_description' => array(
+                     'type' => 'textarea',
+                     'label' => 'Company description',
+                     'enable'  => true,
+                     'editable'  => true,
+                     'class' => 'span7',
+                     'rows' => '15',
+                 ),
+        ),
+    ),
+);

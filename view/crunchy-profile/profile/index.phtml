@@ -1,0 +1,23 @@
+<div class="container rc-box">
+	
+	  <a href="/user/profile" class="btn btn-large">Edit</a>
+	  <br/>
+	  <h3><?php echo $this->escapeHtml($this->zfcUserDisplayName($this->user)); ?>'s Profile</h3>
+      <img data-src="holder.js/180x240" alt="Profile photo" style="width: 180px; height: 240px;" src="<?php echo $this->imagePath ? $this->imagePath : '' ?>">
+      <div class="caption">
+        <p>
+        	<?php if ($profile): ?>
+        		<ul>
+	        	<?php foreach ($profile as $row): ?>
+	        		<?php if ($row->getValue() != '' && $row->getKey() != $this->imageKey): ?>
+				    	<li><?= $row->getValue(); ?></li> <br/>
+				    <?php endif; ?>
+			    <?php endforeach; ?>
+			    </ul>
+		    <?php endif; ?>
+        </p>
+      </div>
+    
+
+</div>
+
