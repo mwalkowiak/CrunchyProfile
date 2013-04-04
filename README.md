@@ -21,9 +21,9 @@ Installation of CrunchyProfile uses composer. For composer documentation, please
     ```json
     "require": {
         "zf-commons/zfc-base": "dev-master",
-        "zf-commons/zfc-user": "dev-master",
-        "imagine/Imagine": "dev-master",
-        "crunchy/crunchy-profile": "dev-master"
+	"zf-commons/zfc-user": "0.*",
+        "imagine/Imagine": "0.3.*",
+        "crunchy/crunchy-profile": "dev-master",
     }
     ```
 2. Tell composer to download CrunchyProfile by running the command:
