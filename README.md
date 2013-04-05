@@ -51,6 +51,7 @@ Installation of CrunchyProfile uses composer. For composer documentation, please
 
 Copy CrunchyProfile/config/crunchyprofile.global.php.dist to ./config/autoload/crunchyprofile.global.php and define your fields and validation rules for them.
 
+Create a folder "profiles" under public/images with write permissions or change the path in the crunchyprofile.global.php
 
 ## TO-DO:
 * Move more options into configuration
